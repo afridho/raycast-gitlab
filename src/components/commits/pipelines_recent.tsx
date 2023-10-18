@@ -1,19 +1,15 @@
 import { Action, ActionPanel, Color, Image, List } from "@raycast/api";
 import { useState } from "react";
-import urljoin from "url-join";
 import { useCache } from "../../cache";
 import { gitlab } from "../../common";
 import { Project, User } from "../../gitlabapi";
 import { GitLabIcons } from "../../icons";
 import { capitalizeFirstLetter, showErrorToast } from "../../utils";
-import { GitLabOpenInBrowserAction } from "../actions";
 import { Event } from "../event";
 import { getCIJobStatusIcon, PipelineJobsListByCommit } from "../jobs";
 import { MyProjectsDropdown } from "../project";
 import { CommitListItem } from "./item";
 import { useCommitStatus } from "./utils";
-
-//NOTE - My Recent Commits
 
 function EventCommitListItem(props: { event: Event }): JSX.Element {
   const e = props.event;
@@ -32,16 +28,6 @@ function EventCommitListItem(props: { event: Event }): JSX.Element {
     }
   );
   const { commitStatus: status } = useCommitStatus(e.project_id, commit);
-  const webAction = (): JSX.Element | undefined => {
-    if (project) {
-      const proUrl = project.web_url;
-      if (proUrl && commit) {
-        const url = urljoin(proUrl, `-/commit/${commit}`);
-        return <GitLabOpenInBrowserAction url={url} />;
-      }
-    }
-    return undefined;
-  };
 
   const action = (): JSX.Element | undefined | null => {
     if (project && commit && status?.status) {
@@ -66,6 +52,8 @@ function EventCommitListItem(props: { event: Event }): JSX.Element {
     ? statusIcon
     : { source: GitLabIcons.commit, tintColor: Color.Green };
 
+  if (!status?.status) return <></>;
+
   return (
     <List.Item
       title={title}
@@ -74,10 +62,7 @@ function EventCommitListItem(props: { event: Event }): JSX.Element {
       icon={{ value: icon, tooltip: status?.status ? `Status: ${capitalizeFirstLetter(status.status)}` : "" }}
       actions={
         <ActionPanel>
-          <ActionPanel.Section>
-            {action()}
-            {webAction()}
-          </ActionPanel.Section>
+          <ActionPanel.Section>{action()}</ActionPanel.Section>
         </ActionPanel>
       }
     />
@@ -88,7 +73,7 @@ function RecentCommitsListEmptyView(): JSX.Element {
   return <List.EmptyView title="No Commits" icon={{ source: GitLabIcons.commit, tintColor: Color.PrimaryText }} />;
 }
 
-export function RecentCommitsList(): JSX.Element {
+export function PipelinesRecentList(): JSX.Element {
   const [project, setProject] = useState<Project>();
   const { data, error, isLoading } = useCache<Event[]>(
     "events_pushed",

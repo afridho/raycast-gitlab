@@ -65,17 +65,17 @@ export function ProjectNavMenusList(props: { project: Project }): JSX.Element {
   const project = props.project;
   return (
     <List navigationTitle={`${project.name_with_namespace}`}>
-      <ProjectNavMenuItem
+      {/* <ProjectNavMenuItem
         title="Issues"
         url={webUrl(project, "-/issues")}
         icon={{ source: GitLabIcons.issue, tintColor: Color.PrimaryText }}
         target={<IssueList scope={IssueScope.all} project={project} />}
-      />
+      /> */}
       <ProjectNavMenuItem
-        title="Merge Requests"
-        url={webUrl(project, "-/merge_requests")}
-        icon={{ source: GitLabIcons.merge_request, tintColor: Color.PrimaryText }}
-        target={<MRList scope={MRScope.all} project={project} />}
+        title="Commits"
+        url={webUrl(project, "-/commits")}
+        icon={{ source: GitLabIcons.commit, tintColor: Color.PrimaryText }}
+        target={<ProjectCommitList projectID={project.id} navigationTitle={project.name_with_namespace} />}
       />
       <ProjectNavMenuItem
         title="Branches"
@@ -84,12 +84,12 @@ export function ProjectNavMenusList(props: { project: Project }): JSX.Element {
         target={<BranchList project={project} navigationTitle={project.name_with_namespace} />}
       />
       <ProjectNavMenuItem
-        title="Commits"
-        url={webUrl(project, "-/commits")}
-        icon={{ source: GitLabIcons.commit, tintColor: Color.PrimaryText }}
-        target={<ProjectCommitList projectID={project.id} navigationTitle={project.name_with_namespace} />}
+        title="Merge Requests"
+        url={webUrl(project, "-/merge_requests")}
+        icon={{ source: GitLabIcons.merge_request, tintColor: Color.PrimaryText }}
+        target={<MRList scope={MRScope.all} project={project} />}
       />
-      <ProjectNavMenuItem
+      {/* <ProjectNavMenuItem
         title="Pipelines"
         url={webUrl(project, "-/pipelines")}
         icon={{ source: GitLabIcons.ci, tintColor: Color.PrimaryText }}
@@ -119,7 +119,7 @@ export function ProjectNavMenusList(props: { project: Project }): JSX.Element {
         title="Settings"
         icon={{ source: GitLabIcons.settings, tintColor: Color.PrimaryText }}
         url={webUrl(project, "edit")}
-      />
+      /> */}
     </List>
   );
 }

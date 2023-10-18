@@ -54,7 +54,7 @@ export function ProjectListItem(props: { project: Project }): JSX.Element {
             <CopyCloneUrlToClipboardAction shortcut={{ modifiers: ["cmd"], key: "u" }} project={project} />
           </ActionPanel.Section>
           <ActionPanel.Section>
-            <OpenProjectIssuesPushAction project={project} />
+            {/* <OpenProjectIssuesPushAction project={project} /> */}
             <OpenProjectMergeRequestsPushAction project={project} />
             <OpenProjectBranchesPushAction project={project} />
             <OpenProjectPipelinesPushAction project={project} />
