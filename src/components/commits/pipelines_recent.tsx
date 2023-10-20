@@ -24,7 +24,7 @@ function EventCommitListItem(props: { event: Event }): JSX.Element {
     },
     {
       deps: [e.project_id],
-      secondsToRefetch: 15 * 60,
+      secondsToRefetch: 10 * 60,
     }
   );
   const { commitStatus: status } = useCommitStatus(e.project_id, commit);
@@ -87,7 +87,7 @@ export function PipelinesRecentList(): JSX.Element {
     },
     {
       deps: [],
-      secondsToRefetch: 5,
+      secondsToRefetch: 2,
     }
   );
   if (error) {
