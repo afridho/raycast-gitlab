@@ -43,7 +43,7 @@ function EventCommitListItem(props: { event: Event }): JSX.Element {
   };
 
   const parseStatusIcon = (status: string, name: string) => {
-    return status == "skipped" && name.startsWith("fail_pipeline") ? "success" : status;
+    return (status == "skipped" || status == "manual") && name.startsWith("fail_pipeline") ? "success" : status;
   };
   const statusIcon: Image.ImageLike | undefined = status?.status
     ? getCIJobStatusIcon(parseStatusIcon(status.status, status.name), status.allow_failure)
