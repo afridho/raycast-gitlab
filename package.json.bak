@@ -3,79 +3,17 @@
   "name": "gitlab",
   "title": "GitLab",
   "version": "1.1.0",
-  "author": "tonka3000",
+  "author": "afridho",
+  "owner": "ridho-package",
   "license": "MIT",
   "description": "Create, search and modify issues, manage merge requests, projects and more.",
   "icon": "gitlab.png",
   "commands": [
     {
-      "name": "issue_my",
-      "title": "My Open Issues",
-      "subtitle": "GitLab",
-      "description": "My GitLab Issues",
-      "mode": "view"
-    },
-    {
-      "name": "issue_search",
-      "title": "Search Issues",
-      "subtitle": "GitLab",
-      "description": "Search GitLab Issues",
-      "mode": "view"
-    },
-    {
-      "name": "issue_create",
-      "title": "Create Issue",
-      "subtitle": "GitLab",
-      "description": "Create GitLab Issue",
-      "mode": "view"
-    },
-    {
       "name": "mr_my",
       "title": "My Merge Requests",
       "subtitle": "GitLab",
       "description": "You GitLab Merge Requests",
-      "mode": "view"
-    },
-    {
-      "name": "mr_search",
-      "title": "Search Merge Requests",
-      "subtitle": "GitLab",
-      "description": "Search Merge Requests",
-      "mode": "view"
-    },
-    {
-      "name": "mr_create",
-      "title": "Create Merge Request",
-      "subtitle": "GitLab",
-      "description": "Create GitLab Merge Request",
-      "mode": "view"
-    },
-    {
-      "name": "user_search",
-      "title": "Search User",
-      "subtitle": "GitLab",
-      "description": "Search GitLab user",
-      "mode": "view"
-    },
-    {
-      "name": "todos",
-      "title": "My Todos",
-      "subtitle": "GitLab",
-      "description": "My GitLab Todos",
-      "mode": "view"
-    },
-    {
-      "name": "reviews",
-      "title": "My Reviews",
-      "subtitle": "GitLab",
-      "description": "My GitLab Reviews",
-      "mode": "view"
-    },
-    {
-      "name": "project_search",
-      "title": "Search Project",
-      "subtitle": "GitLab",
-      "description": "Search GitLab Project",
       "mode": "view"
     },
     {
@@ -93,51 +31,6 @@
       "mode": "view"
     },
     {
-      "name": "group_my",
-      "title": "My Groups",
-      "subtitle": "GitLab",
-      "description": "GitLab Groups",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "flatlist",
-          "description": "Show Groups as Flat List at once",
-          "type": "checkbox",
-          "required": false,
-          "label": "Flat List View",
-          "default": false
-        }
-      ]
-    },
-    {
-      "name": "epics",
-      "title": "Epics",
-      "subtitle": "GitLab",
-      "description": "GitLab Epics",
-      "mode": "view"
-    },
-    {
-      "name": "epic_search",
-      "title": "Search Epics",
-      "subtitle": "GitLab",
-      "description": "Search GitLab Epics",
-      "mode": "view"
-    },
-    {
-      "name": "event_my",
-      "title": "Recent Activities",
-      "subtitle": "GitLab",
-      "description": "Recent GitLab Activities",
-      "mode": "view"
-    },
-    {
-      "name": "status",
-      "title": "Set Status",
-      "subtitle": "GitLab",
-      "description": "Managed My GitLab Status",
-      "mode": "view"
-    },
-    {
       "name": "commits_my",
       "title": "My Recent Commits",
       "subtitle": "GitLab",
@@ -150,100 +43,6 @@
       "subtitle": "GitLab",
       "description": "Managed My Recent Pipelines",
       "mode": "view"
-    },
-    {
-      "name": "todomenubar",
-      "title": "Todos Menu Bar",
-      "description": "Show your todos directly in the Menubar",
-      "mode": "menu-bar",
-      "interval": "15m",
-      "preferences": [
-        {
-          "name": "maxtodos",
-          "description": "Maximum Todos shown",
-          "type": "textfield",
-          "required": false,
-          "title": "Max. Todos",
-          "placeholder": "10"
-        },
-        {
-          "name": "alwaysshow",
-          "description": "Show Todos always in the Menubar regardless if you have todos or not",
-          "type": "checkbox",
-          "required": false,
-          "label": "Show Always",
-          "title": "Appearance",
-          "default": true
-        },
-        {
-          "name": "showtext",
-          "description": "Show Todo Count",
-          "type": "checkbox",
-          "required": false,
-          "label": "Show Todo Count",
-          "default": true
-        },
-        {
-          "name": "grayicon",
-          "description": "Show Grayscale icon",
-          "type": "checkbox",
-          "required": false,
-          "label": "Grayscale Icon",
-          "default": false
-        }
-      ]
-    },
-    {
-      "name": "mrmenu",
-      "title": "Merge Requests Menu Bar",
-      "description": "Display Merge Request directly in the Menubar",
-      "mode": "menu-bar",
-      "interval": "15m",
-      "preferences": [
-        {
-          "name": "maxitems",
-          "description": "Maximum Merge Requests shown",
-          "type": "textfield",
-          "required": false,
-          "title": "Max. Merge Requests",
-          "placeholder": "10"
-        },
-        {
-          "name": "showtext",
-          "description": "Show Merge Requests Count",
-          "type": "checkbox",
-          "required": false,
-          "label": "Show Merge Requests Count",
-          "title": "Appearance",
-          "default": true
-        }
-      ]
-    },
-    {
-      "name": "issuemenu",
-      "title": "Issues Menu Bar",
-      "description": "Display Issues directly in the Menubar",
-      "mode": "menu-bar",
-      "interval": "15m",
-      "preferences": [
-        {
-          "name": "maxitems",
-          "description": "Maximum Issues shown",
-          "type": "textfield",
-          "required": false,
-          "title": "Max. Issues",
-          "placeholder": "10"
-        },
-        {
-          "name": "showtext",
-          "description": "Show Issues Count",
-          "type": "checkbox",
-          "required": false,
-          "label": "Show Issues Count",
-          "title": "Appearance",
-          "default": true
-        }
-      ]
     }
   ],
   "preferences": [

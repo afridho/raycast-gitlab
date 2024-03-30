@@ -4,39 +4,11 @@
   "title": "GitLab",
   "version": "1.1.0",
   "author": "afridho",
-  "owner": "ridho-packagev11",
+  "owner": "ridho-package",
   "license": "MIT",
   "description": "Create, search and modify issues, manage merge requests, projects and more.",
   "icon": "gitlab.png",
   "commands": [
-    {
-      "name": "mr_my",
-      "title": "My Merge Requests",
-      "subtitle": "GitLab",
-      "description": "You GitLab Merge Requests",
-      "mode": "view"
-    },
-    {
-      "name": "project_starred",
-      "title": "My Starred Projects",
-      "subtitle": "GitLab",
-      "description": "Starred GitLab Projects",
-      "mode": "view"
-    },
-    {
-      "name": "project_my",
-      "title": "My Projects",
-      "subtitle": "GitLab",
-      "description": "My GitLab Projects",
-      "mode": "view"
-    },
-    {
-      "name": "commits_my",
-      "title": "My Recent Commits",
-      "subtitle": "GitLab",
-      "description": "Managed My Recent Commits",
-      "mode": "view"
-    },
     {
       "name": "pipelines_my",
       "title": "Pipelines",
